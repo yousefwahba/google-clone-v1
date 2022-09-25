@@ -1,5 +1,5 @@
 import React from 'react';
-import Uster from './Uster';
+import User from './User';
 
 function Header() {
   return (
@@ -11,7 +11,7 @@ function Header() {
       <div className="flex space-x-4 items-center">
         <p className="link">Gmail</p>
         <p className="link">Images</p>
-        <Uster />
+        <User />
       </div>
     </header>
   );
