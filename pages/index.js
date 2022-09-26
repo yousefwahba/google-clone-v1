@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Header from '../components/Header';
 import { MicrophoneIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Header />
 
       {/* body  */}
+
       <form className="flex flex-col items-center mt-40">
         <Image
           width="300"
@@ -34,7 +36,9 @@ export default function Home() {
           <button className="btn">I&apos;m Feeling Lucky</button>
         </div>
       </form>
+
       {/* footer  */}
+      <Footer />
     </div>
   );
 }
