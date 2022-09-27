@@ -6,8 +6,9 @@ import {
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useRef } from 'react';
+import SearchHeaderOptions from './SearchHeaderOptions';
 import User from './User';
-
+import googleImage from '../public/images/Google_2015_logo.png';
 export default function SearchHeader() {
   const router = useRouter();
   const searchInputRef = useRef(null);
@@ -15,10 +16,10 @@ export default function SearchHeader() {
     e.preventDefault();
     const term = searchInputRef.current.value.trim();
     if (!term) return;
-    router.push(`/search?term=${term}`);
+    router.push(`/search?term=${term}&searchType=`);
   }
   return (
-    <header className=" sticky top-0 bg-white flex items-center  ">
+    <header className=" sticky top-0 bg-white">
       <div className="flex w-full items-center p-6">
         <Image
           onClick={() => router.push('/')}
@@ -26,7 +27,7 @@ export default function SearchHeader() {
           objectFit="contain"
           height="40"
           className="cursor-pointer"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+          src={googleImage}
         />
         <form className="flex border border-gray-200 px-6 py-3 rounded-full shadow-lg ml-6 mr-5 flex-grow max-w-3xl items-center">
           <input
@@ -45,6 +46,7 @@ export default function SearchHeader() {
         </form>
         <User className="ml-auto whitespace-nowrap" />
       </div>
+      <SearchHeaderOptions />
     </header>
   );
 }

@@ -5,7 +5,7 @@ import { MicrophoneIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
 import { useRef } from 'react';
-
+import googleImage from '../public/images/Google_2015_logo.png';
 export default function Home() {
   const router = useRouter();
   const searchInputRef = useRef(null);
@@ -13,7 +13,7 @@ export default function Home() {
     e.preventDefault();
     const term = searchInputRef.current.value.trim();
     if (!term) return;
-    router.push(`/search/?term=${term}`);
+    router.push(`/search/?term=${term}&searchType=`);
   };
   return (
     <div>
@@ -30,12 +30,7 @@ export default function Home() {
       {/* body  */}
 
       <form className="flex flex-col items-center mt-40">
-        <Image
-          width="300"
-          objectFit="cover"
-          height="100"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-        />
+        <Image width="300" objectFit="cover" height="100" src={googleImage} />
         <div className="flex w-full mt-5 mx-auto max-w-[90%] border border-gary-200 hover:shadow-lg focus-within:shadow-lg px-5 py-3 rounded-full items-center sm:max-w-xl lg:max-w-2xl">
           <MagnifyingGlassIcon className="h-5 text-gray-500 mr-3" />
           <input
