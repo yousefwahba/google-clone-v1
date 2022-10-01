@@ -6,7 +6,7 @@ custom search engine using google api and random word api
 
 ## Demo 🚀
 
-[preview]()
+[preview](https://google-chrome-search.vercel.app/)
 
 ## Tech Stack
 
